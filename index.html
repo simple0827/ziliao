@@ -119,7 +119,7 @@
             </a>
 
             <a href="javascript:void(0);" class="sub-link-btn" onclick="goToPage('line2.html')" style="background-color: #34C759;">
-                <span><i class="icon">📘</i> 2-号线学习资料</span>
+                <span><i class="icon">📘</i> 学习资料</span>
                 <span class="arrow">➔</span>
             </a>
 
@@ -127,11 +127,21 @@
         </div>
     </div>
 
-    <script>
-        // 一个通用的跳转函数
+    <    <script>
         function goToPage(pageName) {
-            console.log("准备跳转到：" + pageName);
-            window.location.href = pageName; 
+            // 获取点击事件
+            const e = window.event || arguments.callee.caller.arguments[0];
+            const btn = e.currentTarget;
+
+            // 视觉反馈
+            btn.style.opacity = '0.7';
+            btn.querySelector('.icon').innerHTML = '⏳'; 
+            btn.querySelector('span').childNodes[1].nodeValue = ' 正在加载中...';
+            
+            // 实际跳转
+            setTimeout(() => {
+                window.location.href = pageName;
+            }, 100); // 稍微延迟100ms让用户看到点击效果
         }
     </script>
 
