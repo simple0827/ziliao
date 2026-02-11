@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>学习资料门户</title>
+    <style>
+        :root { 
+            --primary-color: #007AFF; 
+            --bg-color: #F2F2F7; 
+            --card-bg: #FFFFFF;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            background: var(--bg-color); 
+            margin: 0; 
+            padding: 0; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 顶部导航栏 - 保持原样 */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            width: 100%;
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* 内容容器 */
+        .container {
+            margin-top: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .menu-title {
+            color: #3a3a3c;
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* 二级链接按钮样式 - 保持原样 */
+        .sub-link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 18px 25px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 12px rgba(0,122,255,0.3);
+            margin-bottom: 15px; /* 增加按钮之间的间距 */
+        }
+
+        .sub-link-btn:active {
+            transform: scale(0.97);
+            background-color: #0056b3;
+        }
+
+        .sub-link-btn span {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 10px;
+            font-size: 22px;
+        }
+
+        .arrow {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+
+        .tip {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #8e8e93;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>学习资料中心</h1>
+    </header>
+
+    <div class="container">
+        <div class="menu-card">
+            <div class="menu-title">选择学习科目</div>
+
+            <a href="javascript:void(0);" class="sub-link-btn" onclick="goToPage('study.html')">
+                <span><i class="icon">📖</i> 1-八通线学习资料</span>
+                <span class="arrow">➔</span>
+            </a>
+
+            <a href="javascript:void(0);" class="sub-link-btn" onclick="goToPage('line2.html')" style="background-color: #34C759;">
+                <span><i class="icon">📘</i> 2-号线学习资料</span>
+                <span class="arrow">➔</span>
+            </a>
+
+            <p class="tip">点击上方按钮进入对应题库</p>
+        </div>
+    </div>
+
+    <script>
+        // 一个通用的跳转函数
+        function goToPage(pageName) {
+            console.log("准备跳转到：" + pageName);
+            window.location.href = pageName; 
+        }
+    </script>
+
+</body>
+</html>
